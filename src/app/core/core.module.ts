@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 
 import { coreRoutes } from './core.routes';
 import { HomePage } from './pages';
+import {
+    NavigationComponent
+} from './components';
 
 // Some auxilary style imports
 import 'styles/normalize.css';
@@ -19,7 +22,11 @@ import 'styles/site.styl';
         RouterModule.forChild(coreRoutes)
     ],
     declarations: [
-        HomePage
+        HomePage,
+        NavigationComponent
+    ],
+    exports: [
+        NavigationComponent
     ]
 })
 export class CoreModule { }

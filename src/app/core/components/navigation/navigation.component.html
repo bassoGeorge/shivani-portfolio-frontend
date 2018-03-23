@@ -1,0 +1,17 @@
+<nav
+>
+    <!-- [class.navigation--quick-links-toggle-on]="mShowQuickLinks" -->
+    <span>SA</span>
+    <!-- Main page navigation -->
+    <ul class="navigation--pages horizontal-flat-list" >
+        <li *ngFor="let page of pages"
+            class="navigation--pages--item" >
+            <a id="page-nav-link-{{page.id}}"
+                routerLink="{{page.target}}"
+                routerLinkActive="page-link-active"
+            >
+                {{page.name}}
+            </a>
+        </li>
+    </ul>
+</nav>
