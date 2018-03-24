@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface NavInfo {
+interface NavInfo {             // 
     id: string;
     name: string;
     target: string;

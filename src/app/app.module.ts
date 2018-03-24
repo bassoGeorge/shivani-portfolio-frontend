@@ -1,27 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { CoreModule } from './core';
+import { coreRoutes } from './core.routes';
 
-const appRoutes: Routes = [
-    { path: '', loadChildren: () => CoreModule },
-    { path: '**', redirectTo: '' }
-]
+import { CacheService, ApiService } from './services';
+import { HomePage, AboutPage, WorkPage } from './pages';
+import { NavigationComponent, AppComponent } from './components';
+import { CoreHttpInterceptors } from './interceptors';
 
 @NgModule({
     imports: [
         BrowserModule,
         RouterModule.forRoot(
-            appRoutes,
+            coreRoutes,
             { enableTracing: false } // only for debugging purposes
         ),
         HttpClientModule,
-        CoreModule
+        CommonModule
     ],
-    declarations: [ AppComponent ],
+    declarations: [
+        AppComponent,
+        HomePage,
+        WorkPage,
+        AboutPage,
+        NavigationComponent
+    ],
+    providers: [
+        CacheService,
+        ApiService,
+        ...CoreHttpInterceptors
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

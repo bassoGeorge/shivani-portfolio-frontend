@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
-import { API_URL } from '../../build-config';
+import { API_URL } from '../build-config';
 
 @Injectable()
 export class ApiService {
