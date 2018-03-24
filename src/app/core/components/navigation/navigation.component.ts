@@ -21,9 +21,8 @@ export class NavigationComponent {
     ) {}
 
     pages: NavInfo[] = [
-        this.buildNav("Home", "/home"),
-        this.buildNav("My Work", "/my-work"),
-        this.buildNav("Contact Me", "/contact-me"),
+        this.buildNav("Work", "/work"),
+        this.buildNav("About", "/about"),
     ]
 
     buildNav(name: string, target: string): NavInfo {

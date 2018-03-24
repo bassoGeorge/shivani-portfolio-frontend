@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services';
 
 @Component({
     selector: 'home-page',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
     title = "Home Page";
+    constructor(
+        private api: ApiService
+    ){
+        // api.test.subscribe(console.log);
+    }
 }

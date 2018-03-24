@@ -7,10 +7,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { coreRoutes } from './core.routes';
-import { HomePage } from './pages';
+import { CacheService, ApiService } from './services';
+import { HomePage, AboutPage, WorkPage } from './pages';
 import {
     NavigationComponent
 } from './components';
+import { CoreHttpInterceptors } from './interceptors';
 
 // Some auxilary style imports
 import 'styles/normalize.css';
@@ -23,7 +25,14 @@ import 'styles/site.styl';
     ],
     declarations: [
         HomePage,
+        WorkPage,
+        AboutPage,
         NavigationComponent
+    ],
+    providers: [
+        CacheService,
+        ApiService,
+        ...CoreHttpInterceptors
     ],
     exports: [
         NavigationComponent
