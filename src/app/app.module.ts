@@ -11,6 +11,10 @@ import { HomePage, AboutPage, WorkPage } from './pages';
 import { NavigationComponent, AppComponent } from './components';
 import { CoreHttpInterceptors } from './interceptors';
 
+// Style imports
+import 'styles/normalize.css';
+import 'styles/site';
+
 @NgModule({
     imports: [
         BrowserModule,
