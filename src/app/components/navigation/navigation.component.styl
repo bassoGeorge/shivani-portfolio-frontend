@@ -1,1 +1,37 @@
 @require "~styles/_utils"
+@require "~styles/_vars"
+
+$navigationPagesGap = 1.4rem
+
+:host
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  height: $navHeight
+
+nav
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  background-image: linear-gradient(274deg, $color.pink, $color.dark-indigo);
+  height: 100%
+  font-size: 1.2rem
+  color: $color.white
+
+  padding: 0 1rem
+
+  .navigation__pages
+    margin: 0 -($navigationPagesGap)
+    li
+      margin: 0 $navigationPagesGap
+
+      a:active,
+      a.active-link:focus,
+      a.active-link
+        color: $color.golden
+
+      a:hover,
+      a:focus
+        color: lighten($color.golden, 60%)

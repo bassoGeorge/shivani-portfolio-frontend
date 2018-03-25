@@ -19,6 +19,7 @@ export class NavigationComponent {
     constructor(
         private router: Router,
     ) {}
+    // TODO: add hostbinding or inverse class for different colors on home
 
     pages: NavInfo[] = [
         this.buildNav("Work", "/work"),

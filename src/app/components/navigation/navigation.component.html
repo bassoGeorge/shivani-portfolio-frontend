@@ -7,12 +7,11 @@
         </a>
     </span>
     <!-- Main page navigation -->
-    <ul class="navigation--pages horizontal-flat-list" >
-        <li *ngFor="let page of pages"
-            class="navigation--pages--item" >
-            <a id="page-nav-link-{{page.id}}"
+    <ul class="navigation__pages horizontal-flat-list" >
+        <li *ngFor="let page of pages">
+            <a id="navigation-pages-{{page.id}}"
                 routerLink="{{page.target}}"
-                routerLinkActive="page-link-active"
+                routerLinkActive="active-link"
             >
                 {{page.name}}
             </a>
