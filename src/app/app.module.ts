@@ -11,7 +11,8 @@ import { HomePage, AboutPage, WorkPage } from './pages';
 import {
     NavigationComponent,
     AppComponent,
-    ResumeButtonComponent
+    ResumeButtonComponent,
+    MyInfoCardComponent
 } from './components';
 import { CoreHttpInterceptors } from './interceptors';
 
@@ -35,6 +36,7 @@ import 'styles/site';
         WorkPage,
         AboutPage,
         ResumeButtonComponent,
+        MyInfoCardComponent,
         NavigationComponent
     ],
     providers: [
