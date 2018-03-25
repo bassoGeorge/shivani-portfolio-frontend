@@ -1,0 +1,30 @@
+@require "~styles/_utils";
+@require "~styles/_vars";
+
+
+.projects-container-nav
+  background: $color.white
+  display: flex
+  li
+    flex-basis: 100%
+    text-align: center
+    padding: 0.6rem 0
+    border-bottom: 2px solid transparent
+    transition: border-bottom-color 300ms ease-in-out
+
+    &.projects-container-nav__active-page
+      border-bottom-color: $color.purple
+      a
+        color: $color.purple
+
+    a
+      transition: color 300ms ease-in-out
+      display: block
+      padding: 0.8rem 0
+      border-right: 1px solid #eee
+      border-left: 1px solid #eee
+
+    &:first-child a
+      border-left: none
+    &:last-child a
+      border-right: none
