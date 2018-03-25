@@ -80,7 +80,14 @@ module.exports = {
                 test: /\.styl$/,
                 include: helpers.root('src', 'app'),
                 loaders: 'raw-loader!stylus-loader'
-            }
+            },
+            {
+                test: /\.(pdf)$/,
+                loaders: [{
+                    loader: 'file-loader',
+                    options: { name: 'assets/docs/[name].[ext]'}
+                }]
+            },
         ]
     },
 

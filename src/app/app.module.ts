@@ -8,7 +8,11 @@ import { coreRoutes } from './core.routes';
 
 import { CacheService, ApiService } from './services';
 import { HomePage, AboutPage, WorkPage } from './pages';
-import { NavigationComponent, AppComponent } from './components';
+import {
+    NavigationComponent,
+    AppComponent,
+    ResumeButtonComponent
+} from './components';
 import { CoreHttpInterceptors } from './interceptors';
 
 // Style imports
@@ -30,6 +34,7 @@ import 'styles/site';
         HomePage,
         WorkPage,
         AboutPage,
+        ResumeButtonComponent,
         NavigationComponent
     ],
     providers: [
