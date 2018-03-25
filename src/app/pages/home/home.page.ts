@@ -3,7 +3,8 @@ import { ApiService } from '../../services';
 
 @Component({
     selector: 'home-page',
-    templateUrl: './home.page.html'
+    templateUrl: './home.page.html',
+    styleUrls: ['../page.styl']
 })
 export class HomePage {
     title = "Home Page";
