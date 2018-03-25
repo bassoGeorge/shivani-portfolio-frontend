@@ -10,7 +10,8 @@
     text-align: center
     padding: 0.6rem 0
     border-bottom: 2px solid transparent
-    transition: border-bottom-color 300ms ease-in-out
+    cursor: pointer
+    basic-transition(border-bottom-color)
 
     &.projects-container-nav__active-page
       border-bottom-color: $color.purple
@@ -18,7 +19,7 @@
         color: $color.purple
 
     a
-      transition: color 300ms ease-in-out
+      basic-transition(color)
       display: block
       padding: 0.8rem 0
       border-right: 1px solid #eee
