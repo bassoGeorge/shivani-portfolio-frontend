@@ -1,2 +1,25 @@
+@require "_typography";
+@require "_vars";
+
+html
+  font-size: 62.5%
+  height: 100%
+
 body
-  font: 12px Helvetica, Arial, sans-serif
+  background-color: $color.off-white
+  min-height: 100%
+  overflow: auto
+  padding-top: $navHeight
+
+
+// Clear out default link styles
+a, a:hover, a:focus, a:active
+  text-decoration: none
+  color: inherit
+
+
+ul.horizontal-flat-list
+  list-style-type: none
+  padding-left: 0
+  li
+    display: inline-block
