@@ -32,7 +32,12 @@ export class ProjectsMasonryComponent {
         size: 2
     }];
 
+    masonryOptions = {
+        percentPosition: true,
+    }
+
     constructor(
         private elem: ElementRef
     ) {}
+
 }

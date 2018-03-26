@@ -1,8 +1,10 @@
-<section class="trial-masonry">
-    <div *ngFor="let item of testProjects"
+<masonry [options]="masonryOptions">
+    <masonry-brick *ngFor="let item of testProjects; let i = index"
          class="project-card"
          [ngClass]="{small: item.size == 0, medium: item.size == 1, large: item.size == 2}"
     >
-        testing
-    </div>
-</section>
+        <div>
+            testing {{ i }}
+        </div>
+    </masonry-brick>
+</masonry>

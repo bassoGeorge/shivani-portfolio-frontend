@@ -7,13 +7,25 @@
 .project-card
   background: $color.white
   display: inline-block
-  width: calc(100% / 3)
+  width: 100%
+  padding: 1rem
+  +on-tablet-up()
+    width: 50%
+  +on-desktop-up()
+    width: calc(100% / 3)
+
+  div
+    height: 100%
+
   &.small
     height: 40rem
-    background: $color.dark-indigo
+    div
+      background: $color.dark-indigo
   &.medium
     height: 60rem
-    background: $color.pink
+    div
+      background: $color.pink
   &.large
     height: 80rem
-    background: $color.purple
+    div
+      background: $color.purple

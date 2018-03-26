@@ -3,6 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { MasonryModule } from 'angular2-masonry';
 
 import { coreRoutes } from './core.routes';
 
@@ -30,7 +31,8 @@ import 'styles/site';
             { enableTracing: false } // only for debugging purposes
         ),
         HttpClientModule,
-        CommonModule
+        CommonModule,
+        MasonryModule
     ],
     declarations: [
         AppComponent,
