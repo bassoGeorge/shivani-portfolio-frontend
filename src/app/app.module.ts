@@ -13,7 +13,8 @@ import {
     AppComponent,
     ResumeButtonComponent,
     MyInfoCardComponent,
-    ProjectsContainerComponent
+    ProjectsContainerComponent,
+    ProjectsMasonryComponent
 } from './components';
 import { CoreHttpInterceptors } from './interceptors';
 
@@ -39,6 +40,7 @@ import 'styles/site';
         ResumeButtonComponent,
         MyInfoCardComponent,
         ProjectsContainerComponent,
+        ProjectsMasonryComponent,
         NavigationComponent
     ],
     providers: [

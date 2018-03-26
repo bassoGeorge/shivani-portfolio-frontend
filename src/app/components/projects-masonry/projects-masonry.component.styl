@@ -1,0 +1,19 @@
+@require "~styles/_utils";
+@require "~styles/_vars";
+
+:host
+  display: block
+
+.project-card
+  background: $color.white
+  display: inline-block
+  width: calc(100% / 3)
+  &.small
+    height: 40rem
+    background: $color.dark-indigo
+  &.medium
+    height: 60rem
+    background: $color.pink
+  &.large
+    height: 80rem
+    background: $color.purple
