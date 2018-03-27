@@ -1,10 +1,18 @@
 @require "~styles/_utils";
 @require "~styles/_vars";
 
+:host
+  +on-desktop-up()
+    display: inline-block
+    // width: "calc(75% - %s)" % $cardGap
+    width: "calc(100% - 30rem - %s)" % $cardGap
+    float: right
+
 
 .projects-container-nav
   background: $color.white
   display: flex
+  margin-top: 0
   li
     flex-basis: 100%
     text-align: center
