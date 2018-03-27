@@ -1,31 +1,35 @@
 @require "~styles/_utils";
 @require "~styles/_vars";
 
+$cardPadding = $cardGap / 2;
+
 :host
   display: block
+  margin: -($cardPadding)
 
 .project-card
-  background: $color.white
   display: inline-block
   width: 100%
-  padding: 1rem
+  padding: $cardPadding
   +on-tablet-up()
     width: 50%
   +on-desktop-up()
     width: calc(100% / 3)
 
-  div
+  figure
     height: 100%
+    background: $color.white
+    margin: 0
+    img.projects-masonry--card-thumbnail
+      width: 100%
 
-  &.small
-    height: 40rem
-    div
-      background: $color.dark-indigo
-  &.medium
-    height: 60rem
-    div
-      background: $color.pink
-  &.large
-    height: 80rem
-    div
-      background: $color.purple
+    figcaption
+      padding: 2rem 1rem
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+.projects-masonry--card-arrow
+  height: 1.2rem
+  width: auto
+  flex-shrink: 1

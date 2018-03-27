@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { Project } from '../../models';
 
 interface ProjectType {
     id: number,
@@ -15,6 +16,7 @@ export class ProjectsContainerComponent {
 
     projectTypes: ProjectType[];
     currentProjectType: ProjectType = null;
+    currentProjects: Project[];
 
     constructor(
         private api: ApiService
@@ -28,5 +30,8 @@ export class ProjectsContainerComponent {
     switchToProjectsPage(ptype: ProjectType) {
         this.currentProjectType = ptype;
         // TODO: Fetch the projects from api and set to variable
+        this.api.getProjects(ptype.id).subscribe(projects => {
+            this.currentProjects = projects;
+        });
     }
 }
