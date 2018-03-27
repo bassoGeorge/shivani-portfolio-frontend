@@ -1,0 +1,40 @@
+@require "~styles/_utils";
+@require "~styles/_vars";
+
+:host
+  display: block
+  background: $color.white
+  padding: 2rem
+  text-align: center
+  +on-tablet-only()
+    display: flex
+    text-align: left
+
+.my-info-card__advance
+  display: none
+  margin-top: 5rem
+  +on-desktop-up()
+    display: block
+
+.my-info-card__title
+  font-size: 1.8rem
+  color: $color.dark-indigo-two
+  font-weight: bold
+
+.my-info-card__avatar
+  // border: 1px solid #eee
+  // border-radius: 50%
+  height: 12rem
+  +on-tablet-only()
+    margin-right: 2rem
+
+.my-info-card__skills-title
+  font-size: 1.6rem
+
+.my-info-card__skills-container
+  text-align: center
+  margin-bottom: 2rem
+  img
+    display: inline-block
+    margin: 0 0.8rem
+    height: 4.5rem

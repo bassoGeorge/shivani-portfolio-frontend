@@ -48,3 +48,6 @@ on-big-desktop-up()
 on-tablet-only()
   @media screen and (min-width: $breakpoints.tablet-portrait) and (max-width: $breakpoints.desktop - 1px)
     {block}
+
+basic-transition(item)
+  transition: item 300ms ease-in-out

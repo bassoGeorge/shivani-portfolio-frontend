@@ -1,0 +1,15 @@
+<masonry [options]="masonryOptions" [useImagesLoaded]>
+    <masonry-brick *ngFor="let project of projects; let i = index"
+         class="project-card">
+        <figure>
+            <img class="projects-masonry--card-thumbnail" alt="{{project.title}} thumbnail" [src]="project.thumbnail"/>
+            <figcaption>
+                <span>
+                    {{ project.title }} - {{ project.subtitle }}
+                </span>
+                <!-- right arrow here -->
+                <img class="projects-masonry--card-arrow" alt="see details" src="~images/arrow-right.png"/>
+            </figcaption>
+        </figure>
+    </masonry-brick>
+</masonry>

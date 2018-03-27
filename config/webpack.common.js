@@ -25,7 +25,8 @@ module.exports = {
         extensions: ['.ts', '.js', '.styl'],
         alias: {
             styles: path.resolve(appPath, 'assets', 'css'),
-            docs: path.resolve(appPath, 'assets', 'docs')
+            docs: path.resolve(appPath, 'assets', 'docs'),
+            images: path.resolve(appPath, 'assets', 'images')
         }
     },
 
@@ -80,7 +81,21 @@ module.exports = {
                 test: /\.styl$/,
                 include: helpers.root('src', 'app'),
                 loaders: 'raw-loader!stylus-loader'
-            }
+            },
+            {
+                test: /\.(png|jpg|jpeg)$/,
+                loaders: [{
+                    loader: 'file-loader',
+                    options: { name: 'assets/images/[name].[ext]'}
+                }]
+            },
+            {
+                test: /\.(pdf)$/,
+                loaders: [{
+                    loader: 'file-loader',
+                    options: { name: 'assets/docs/[name].[ext]'}
+                }]
+            },
         ]
     },
 
