@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, SecurityContext } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Rx';
 
 import { API_URL } from '../build-config';
@@ -8,7 +9,8 @@ import { Project } from '../models';
 @Injectable()
 export class ApiService {
     constructor(
-        private http: HttpClient
+        private http: HttpClient,
+        private ds: DomSanitizer
     ){}
 
     test: Observable<any> = this.http.get("/api/tables/test_projects/rows")
@@ -40,11 +42,32 @@ export class ApiService {
             // .mergeMap(items => Observable.from(items))
             .map((items: any[]) => {
                 return items.map( item => ({
+                    id: parseInt(item['id']),
                     title: item['title'],
                     subtitle: item['subtitle'],
-                    thumbnail: this.completeDataUrl(item['thumbnail'])
+                    thumbnail: this.completeDataUrl(item['thumbnail']),
+                    details: null
                 }));
             });
+    }
+
+    getProjectDetails(id: number): Observable<Project> {
+        return this.http
+            .get(`/api/tables/projects/rows/${id}`, {
+                params: new HttpParams()
+                    .set('depth', '0')
+            })
+            .map(json => json['data'])
+            .map((item: any) => {
+                return {
+                    id: parseInt(item['id']),
+                    title: item['title'],
+                    subtitle: item['subtitle'],
+                    thumbnail: this.completeDataUrl(item['thumbnail']),
+                    details: this.convertDetailsToHtml(item['details'])
+                };
+            });
+        ;
     }
 
     // Given a relativePath, completes the URL with API base
@@ -54,5 +77,10 @@ export class ApiService {
             return API_URL + relativePath;
         }
         return relativePath;
+    }
+
+    private convertDetailsToHtml(data: string) {
+        let text = (data || '<div></div>').replace(/src=('|")(\/.*?)('|")/g, 'src=$1'+ API_URL + '$2$3')
+        return this.ds.sanitize(SecurityContext.HTML, text);
     }
 }

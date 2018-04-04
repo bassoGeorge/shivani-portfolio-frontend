@@ -8,7 +8,9 @@
                     {{ project.title }} - {{ project.subtitle }}
                 </span>
                 <!-- right arrow here -->
-                <img class="projects-masonry--card-arrow" alt="see details" src="~images/arrow-right.png"/>
+                <a role="button" [routerLink]="['/work', project.id]" >
+                    <img class="projects-masonry--card-arrow" alt="see details" src="~images/arrow-right.png"/>
+                </a>
             </figcaption>
         </figure>
     </masonry-brick>

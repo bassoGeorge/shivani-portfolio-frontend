@@ -8,7 +8,12 @@ import { MasonryModule } from 'angular2-masonry';
 import { coreRoutes } from './core.routes';
 
 import { CacheService, ApiService } from './services';
-import { HomePage, AboutPage, WorkPage } from './pages';
+import {
+    HomePage,
+    AboutPage,
+    WorkPage,
+    ProjectDetailsPage
+} from './pages';
 import {
     NavigationComponent,
     AppComponent,
@@ -39,6 +44,7 @@ import 'styles/site';
         HomePage,
         WorkPage,
         AboutPage,
+        ProjectDetailsPage,
         ResumeButtonComponent,
         MyInfoCardComponent,
         ProjectsContainerComponent,
