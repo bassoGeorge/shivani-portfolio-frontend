@@ -4,7 +4,7 @@ import { ApiService } from '../../services';
 @Component({
     selector: 'home-page',
     templateUrl: './home.page.html',
-    styleUrls: ['../page.styl']
+    styleUrls: ['../page.styl', './home.page.styl']
 })
 export class HomePage {
     title = "Home Page";

@@ -1,11 +1,10 @@
 <nav
 >
     <!-- [class.navigation--quick-links-toggle-on]="mShowQuickLinks" -->
-    <span>
-        <a routerLink="/" >
-            SA
-        </a>
-    </span>
+    <a routerLink="/" class="navigation__logo">
+        <img alt="" [hidden]="!lightNav" src="~images/sa_purple.png"/>
+        <img alt="" [hidden]="lightNav" src="~images/sa_white.png"/>
+    </a>
     <!-- Main page navigation -->
     <ul class="navigation__pages horizontal-flat-list" >
         <li *ngFor="let page of pages">

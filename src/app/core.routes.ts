@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { HomePage, AboutPage, WorkPage, ProjectDetailsPage } from './pages';
 
 export const coreRoutes: Routes = [
-    { path: 'home', component: HomePage },
+    { path: 'home', component: HomePage, data: { navTheme: 'light'} },
     { path: 'about', component: AboutPage },
     { path: 'work', component: WorkPage },
     { path: 'work/:id', component: ProjectDetailsPage },
