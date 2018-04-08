@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Rx';
 
 import { API_URL } from '../build-config';
-import { Project } from '../models';
+import { Project, ProjectDetails } from '../models';
 
 @Injectable()
 export class ApiService {
@@ -45,13 +45,12 @@ export class ApiService {
                     id: parseInt(item['id']),
                     title: item['title'],
                     subtitle: item['subtitle'],
-                    thumbnail: this.completeDataUrl(item['thumbnail']),
-                    details: null
+                    thumbnail: this.completeDataUrl(item['thumbnail'])
                 }));
             });
     }
 
-    getProjectDetails(id: number): Observable<Project> {
+    getProjectDetails(id: number): Observable<ProjectDetails> {
         return this.http
             .get(`/api/tables/projects/rows/${id}`, {
                 params: new HttpParams()
@@ -63,8 +62,8 @@ export class ApiService {
                     id: parseInt(item['id']),
                     title: item['title'],
                     subtitle: item['subtitle'],
-                    thumbnail: this.completeDataUrl(item['thumbnail']),
-                    details: this.convertDetailsToHtml(item['details'])
+                    description: this.convertDetailsToHtml(item['details']),
+                    bannerImage: null
                 };
             });
         ;
