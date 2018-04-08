@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Rx';
 
 import { API_URL } from '../build-config';
-import { Project } from '../models';
+import { Project, ProjectDetails } from '../models';
 
 @Injectable()
 export class ApiService {
@@ -35,7 +35,7 @@ export class ApiService {
                 params: new HttpParams()
                     .set('depth', '0')
                     .set('active', '1')
-                    .set('columns', 'id,title,subtitle,thumbnail')
+                    .set('columns', 'id,title,subtitle,thumbnail.url')
                     .set('filters[project_type_id][eq]', '' + pType)
             })
             .map(json => json['data'])
@@ -45,17 +45,18 @@ export class ApiService {
                     id: parseInt(item['id']),
                     title: item['title'],
                     subtitle: item['subtitle'],
-                    thumbnail: this.completeDataUrl(item['thumbnail']),
-                    details: null
+                    thumbnail: this.completeDataUrl(item['thumbnail']['data']['url'])
                 }));
             });
     }
 
-    getProjectDetails(id: number): Observable<Project> {
+    getProjectDetails(id: number): Observable<ProjectDetails> {
         return this.http
             .get(`/api/tables/projects/rows/${id}`, {
                 params: new HttpParams()
                     .set('depth', '0')
+                    .set('active', '1')
+                    .set('columns', 'id,title,subtitle,banner_image.url,details')
             })
             .map(json => json['data'])
             .map((item: any) => {
@@ -63,8 +64,8 @@ export class ApiService {
                     id: parseInt(item['id']),
                     title: item['title'],
                     subtitle: item['subtitle'],
-                    thumbnail: this.completeDataUrl(item['thumbnail']),
-                    details: this.convertDetailsToHtml(item['details'])
+                    description: this.convertDetailsToHtml(item['details']),
+                    bannerImage: item['banner_image'] !== null ? this.completeDataUrl(item['banner_image']['data']['url']) : null
                 };
             });
         ;

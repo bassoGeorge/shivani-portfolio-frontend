@@ -1,10 +1,9 @@
 import { Component, HostBinding } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { SafeHtml } from '@angular/platform-browser';
 import 'rxjs/add/operator/switchMap';
 
 import { ApiService } from '../../services/api.service';
-import { Project } from '../../models';
+import { ProjectDetails } from '../../models';
 
 @Component({
     selector: 'project-details-page',
@@ -19,13 +18,13 @@ export class ProjectDetailsPage {
         private api: ApiService
     ){}
 
-    details: SafeHtml;
+    projectDetails: ProjectDetails;
 
     ngOnInit() {
         this.route.paramMap
             .switchMap((params: ParamMap) => this.api.getProjectDetails(parseInt(params.get('id'))))
             .subscribe( project => {
-                this.details = project.details
+                this.projectDetails = project;
             })
         ;
     }
