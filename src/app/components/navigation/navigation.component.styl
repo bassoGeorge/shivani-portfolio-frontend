@@ -36,3 +36,14 @@ nav
       a:hover,
       a:focus
         color: lighten($color.golden, 60%)
+
+:host.navigation-theme--light
+  nav
+    background-image: none
+    background-color: transparent
+
+    color: $color.light-purple
+    .navigation__pages li
+      a:hover,
+      a:focus
+        color: $color.dark-indigo
