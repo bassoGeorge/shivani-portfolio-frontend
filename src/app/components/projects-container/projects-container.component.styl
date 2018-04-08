@@ -37,3 +37,24 @@
       border-left: none
     &:last-child a
       border-right: none
+
+$fixedBottomResumeContainerHeight = 8rem
+
+projects-masonry
+  margin-bottom: $fixedBottomResumeContainerHeight
+  +on-desktop-up()
+    margin-bottom: 0
+
+.mobile-resume-button-container
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  height: $fixedBottomResumeContainerHeight
+  background: transparent
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 2
+  +on-desktop-up()
+    display: none

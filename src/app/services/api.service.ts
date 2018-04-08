@@ -13,12 +13,6 @@ export class ApiService {
         private ds: DomSanitizer
     ){}
 
-    test: Observable<any> = this.http.get("/api/tables/test_projects/rows")
-        .map(json => json['data'])
-        .mergeMap(items => Observable.from(items))
-        .map(( item:any ) => ({...item, thumbnail: this.completeDataUrl(item.thumbnail) }))
-    ;
-
     projectTypes: Observable<{id: number, name: string}[]> =
         this.http.get("/api/tables/project_types/rows", {
             params: new HttpParams()
