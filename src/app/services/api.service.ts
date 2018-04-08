@@ -35,7 +35,7 @@ export class ApiService {
                 params: new HttpParams()
                     .set('depth', '0')
                     .set('active', '1')
-                    .set('columns', 'id,title,subtitle,thumbnail')
+                    .set('columns', 'id,title,subtitle,thumbnail.url')
                     .set('filters[project_type_id][eq]', '' + pType)
             })
             .map(json => json['data'])
@@ -45,7 +45,7 @@ export class ApiService {
                     id: parseInt(item['id']),
                     title: item['title'],
                     subtitle: item['subtitle'],
-                    thumbnail: this.completeDataUrl(item['thumbnail'])
+                    thumbnail: this.completeDataUrl(item['thumbnail']['data']['url'])
                 }));
             });
     }
@@ -55,6 +55,8 @@ export class ApiService {
             .get(`/api/tables/projects/rows/${id}`, {
                 params: new HttpParams()
                     .set('depth', '0')
+                    .set('active', '1')
+                    .set('columns', 'id,title,subtitle,banner_image.url,details')
             })
             .map(json => json['data'])
             .map((item: any) => {
@@ -63,7 +65,7 @@ export class ApiService {
                     title: item['title'],
                     subtitle: item['subtitle'],
                     description: this.convertDetailsToHtml(item['details']),
-                    bannerImage: null
+                    bannerImage: item['banner_image'] !== null ? this.completeDataUrl(item['banner_image']['data']['url']) : null
                 };
             });
         ;
