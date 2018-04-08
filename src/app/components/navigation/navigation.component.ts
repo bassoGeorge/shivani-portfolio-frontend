@@ -43,4 +43,6 @@ export class NavigationComponent {
             target: target
         }
     }
+
+    logoUrl = () => this.lightNav ? "~images/sa_purple.png" : "~images/sa_white.png";
 }
