@@ -1,6 +1,6 @@
 import { Injectable, SecurityContext } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Rx';
 
 import { API_URL } from '../build-config';
@@ -21,6 +21,16 @@ export class ApiService {
                 .set('columns', 'id,name')
         })
         .map(json => json['data'])
+    ;
+
+    aboutMe: Observable<SafeHtml> =
+        this.http.get("/api/tables/info/rows/1", {
+            params: new HttpParams()
+                .set('depth', '0')
+                .set('columns', 'about_me')
+        })
+        .map(json => json['data'])
+        .map(data => this.ds.sanitize(SecurityContext.HTML, data['about_me']))
     ;
 
     getProjects(pType: number): Observable<Project[]> {
