@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
@@ -8,7 +8,8 @@ import { ProjectDetails } from '../../models';
 @Component({
     selector: 'project-details-page',
     styleUrls: ['./project-details.page.styl', '../page.styl'],
-    templateUrl: './project-details.page.html'
+    templateUrl: './project-details.page.html',
+    encapsulation: ViewEncapsulation.None
 })
 export class ProjectDetailsPage {
     @HostBinding('class.off-white-page') offWhitePage = false;

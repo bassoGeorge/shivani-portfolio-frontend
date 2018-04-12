@@ -1,10 +1,4 @@
-<div>
-    <main *ngIf="projectDetails">
-        <p>
-            This is the work details page
-        </p>
-        <img *ngIf="projectDetails.bannerImage" alt="bannerImage" [src]="projectDetails.bannerImage"/>
-        <div [innerHTML]="projectDetails.description">
-        </div>
-    </main>
-</div>
+<main *ngIf="projectDetails" class="project-details">
+    <img class="project-details__banner" *ngIf="projectDetails.bannerImage" alt="bannerImage" [src]="projectDetails.bannerImage"/>
+    <div class="project-details__description" [innerHTML]="projectDetails.description"></div>
+</main>
