@@ -1,0 +1,15 @@
+<ul class="horizontal-flat-list projects-container-nav">
+    <li *ngFor="let ptype of projectTypes"
+        [class.projects-container-nav__active-page]="ptype.id == currentProjectType.id"
+    >
+        <a role="button"
+           (click)="switchToProjectsPage(ptype)"
+        >{{ptype.name}}</a>
+    </li>
+</ul>
+<projects-masonry
+    [projects]="currentProjects"
+></projects-masonry>
+<div class="mobile-resume-button-container">
+    <resume-button></resume-button>
+</div>

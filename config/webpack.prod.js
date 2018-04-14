@@ -10,7 +10,7 @@ var helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = function(env) { return webpackMerge(commonConfig, {
     devtool: 'source-map',
 
     output: {
@@ -30,7 +30,8 @@ module.exports = webpackMerge(commonConfig, {
         new ExtractTextPlugin('[name].[hash].css'),
         new webpack.DefinePlugin({
             'process.env': {
-                'ENV': JSON.stringify(ENV)
+                'ENV': JSON.stringify(ENV),
+                API_URL: JSON.stringify("localhost:7888") // TODO: get from ENV variable / ansible
             }
         }),
         new webpack.LoaderOptionsPlugin({
@@ -39,4 +40,4 @@ module.exports = webpackMerge(commonConfig, {
             }
         })
     ]
-});
+}); };

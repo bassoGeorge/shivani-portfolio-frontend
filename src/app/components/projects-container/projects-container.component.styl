@@ -1,0 +1,60 @@
+@require "~styles/_utils";
+@require "~styles/_vars";
+
+:host
+  +on-desktop-up()
+    display: inline-block
+    // width: "calc(75% - %s)" % $cardGap
+    width: "calc(100% - 30rem - %s)" % $cardGap
+    float: right
+
+
+.projects-container-nav
+  background: $color.white
+  display: flex
+  margin-top: 0
+  li
+    flex-basis: 100%
+    text-align: center
+    padding: 0.6rem 0
+    border-bottom: 2px solid transparent
+    cursor: pointer
+    basic-transition(border-bottom-color)
+
+    &.projects-container-nav__active-page
+      border-bottom-color: $color.purple
+      a
+        color: $color.purple
+
+    a
+      basic-transition(color)
+      display: block
+      padding: 0.8rem 0
+      border-right: 1px solid #eee
+      border-left: 1px solid #eee
+
+    &:first-child a
+      border-left: none
+    &:last-child a
+      border-right: none
+
+$fixedBottomResumeContainerHeight = 8rem
+
+projects-masonry
+  margin-bottom: $fixedBottomResumeContainerHeight
+  +on-desktop-up()
+    margin-bottom: 0
+
+.mobile-resume-button-container
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  height: $fixedBottomResumeContainerHeight
+  background: transparent
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 2
+  +on-desktop-up()
+    display: none
