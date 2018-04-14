@@ -19,6 +19,7 @@ import {
     AppComponent,
     ResumeButtonComponent,
     MyInfoCardComponent,
+    ParticlesComponent,
     ProjectsContainerComponent,
     ProjectsMasonryComponent
 } from './components';
@@ -47,6 +48,7 @@ import 'styles/site';
         ProjectDetailsPage,
         ResumeButtonComponent,
         MyInfoCardComponent,
+        ParticlesComponent,
         ProjectsContainerComponent,
         ProjectsMasonryComponent,
         NavigationComponent
