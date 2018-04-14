@@ -1,7 +1,7 @@
 {
   "name": "final-prep",
   "version": "1.0.0",
-  "description": "Figuring out the correct angular-webpack marriage",
+  "description": "Portfolio for Shivani Arvikar",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 7080",
@@ -9,7 +9,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "anishgeorgehb@gmail.com",
   "license": "ISC",
   "dependencies": {
     "@angular/common": "~4.3.4",
