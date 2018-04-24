@@ -6,7 +6,7 @@
                 <img class="projects-masonry--card-thumbnail" alt="{{project.title}} thumbnail" [src]="project.thumbnail"/>
                 <figcaption>
                     <span>
-                        {{ project.title }} - {{ project.subtitle }}
+                        {{ project.title }} {{ project.subtitle ? '- ' + project.subtitle : '' }}
                     </span>
                     <!-- right arrow here -->
                         <img class="projects-masonry--card-arrow" alt="see details" src="~images/arrow-right.png"/>
