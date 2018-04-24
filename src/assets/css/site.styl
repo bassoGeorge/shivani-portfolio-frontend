@@ -1,5 +1,6 @@
 @require "_typography";
 @require "_vars";
+@require "_utils";
 
 *
   box-sizing: border-box
@@ -28,3 +29,39 @@ ul.horizontal-flat-list
 
 h2, h3
   color: $color.purple
+
+
+.basic-button,
+a.basic-button
+  display: inline-block
+  color: $color.white
+  background: $color.purple
+  border-radius: 4.5rem
+  font-weight: bold
+  padding: 1.4rem 4rem
+  font-size: 1.6rem
+  cursor: pointer
+  basic-transition(background)
+
+  &:hover,
+  &:active
+    background: $color.pink
+
+.floating-footer
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  margin: 1rem auto
+  height: 8rem
+  background: transparent
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 2
+
+ .depth-1
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
+ .depth-2
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

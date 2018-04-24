@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 import { ApiService } from '../../services/api.service';
@@ -7,7 +8,7 @@ import { ProjectDetails } from '../../models';
 
 @Component({
     selector: 'project-details-page',
-    styleUrls: ['./project-details.page.styl', '../page.styl'],
+    styleUrls: ['../page.styl', './project-details.page.styl'],
     templateUrl: './project-details.page.html',
 })
 export class ProjectDetailsPage {
@@ -15,6 +16,7 @@ export class ProjectDetailsPage {
 
     constructor(
         private route: ActivatedRoute,
+        private location: Location,
         private api: ApiService
     ){}
 
@@ -27,5 +29,9 @@ export class ProjectDetailsPage {
                 this.projectDetails = project;
             })
         ;
+    }
+
+    backToWork() {
+        this.location.back();
     }
 }
