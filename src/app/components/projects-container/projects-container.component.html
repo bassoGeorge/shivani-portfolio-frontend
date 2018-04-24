@@ -1,4 +1,4 @@
-<ul class="horizontal-flat-list projects-container-nav">
+<ul class="horizontal-flat-list projects-container-nav depth-1">
     <li *ngFor="let ptype of projectTypes"
         [class.projects-container-nav__active-page]="ptype.id == currentProjectType.id"
     >
@@ -11,5 +11,5 @@
     [projects]="currentProjects"
 ></projects-masonry>
 <div class="floating-footer mobile-resume-button-container">
-    <resume-button></resume-button>
+    <resume-button [floating]="true"></resume-button>
 </div>

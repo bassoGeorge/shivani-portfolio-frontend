@@ -1,7 +1,7 @@
 <masonry [options]="masonryOptions" [useImagesLoaded]>
     <masonry-brick *ngFor="let project of projects; let i = index"
          class="project-card">
-        <figure>
+        <figure class="depth-1">
             <a role="button" [routerLink]="['/work', project.id]" >
                 <img class="projects-masonry--card-thumbnail" alt="{{project.title}} thumbnail" [src]="project.thumbnail"/>
                 <figcaption>
