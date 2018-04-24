@@ -20,6 +20,7 @@ import {
     ResumeButtonComponent,
     MyInfoCardComponent,
     ParticlesComponent,
+    Waves3dComponent,
     ProjectsContainerComponent,
     ProjectsMasonryComponent
 } from './components';
@@ -49,6 +50,7 @@ import 'styles/site';
         ResumeButtonComponent,
         MyInfoCardComponent,
         ParticlesComponent,
+        Waves3dComponent,
         ProjectsContainerComponent,
         ProjectsMasonryComponent,
         NavigationComponent
