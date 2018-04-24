@@ -1,4 +1,8 @@
 <main *ngIf="projectDetails" class="project-details">
     <img class="project-details__banner" *ngIf="projectDetails.bannerImage" alt="bannerImage" [src]="projectDetails.bannerImage"/>
     <div class="project-details__description" [innerHTML]="projectDetails.description"></div>
+
+    <div class="floating-footer">
+        <a class="basic-button" role="button" (click)="backToWork()">Back to All Projects</a>
+    </div>
 </main>

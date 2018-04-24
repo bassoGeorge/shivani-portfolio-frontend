@@ -28,3 +28,31 @@ ul.horizontal-flat-list
 
 h2, h3
   color: $color.purple
+
+
+.basic-button
+  display: inline-block
+  color: $color.white
+  background: $color.purple
+  border-radius: 4.5rem
+  font-weight: bold
+  padding: 1.4rem 4rem
+  font-size: 1.6rem
+  basic-transition(background)
+
+  &:hover,
+  &:active
+    background: $color.pink
+
+.floating-footer
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  margin: 1rem auto
+  height: 8rem
+  background: transparent
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 2
