@@ -1,0 +1,20 @@
+$pWidth = 15rem;
+$pHeight = 2rem;
+#parallax-bg {
+  position: fixed;
+  bottom: -($pHeight);
+  left: -($pWidth / 2);
+  width: "calc(100% + %s)" % $pWidth;
+  text-align: center;
+}
+.layer {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.home-page__background-waves {
+  min-width: 100%;
+  position: relative;
+  left: 100%;
+  margin-left: -200%;
+}

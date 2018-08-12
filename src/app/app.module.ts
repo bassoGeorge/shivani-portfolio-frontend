@@ -21,7 +21,7 @@ import {
     MyInfoCardComponent,
     ParticlesComponent,
     ProjectsContainerComponent,
-    ProjectsMasonryComponent
+    ProjectsMasonryComponent, ParallaxBgComponent
 } from './components';
 import { CoreHttpInterceptors } from './interceptors';
 
@@ -49,6 +49,7 @@ import 'styles/site';
         ResumeButtonComponent,
         MyInfoCardComponent,
         ParticlesComponent,
+        ParallaxBgComponent,
         ProjectsContainerComponent,
         ProjectsMasonryComponent,
         NavigationComponent

@@ -7,7 +7,7 @@ import { ApiService } from '../../services';
     styleUrls: ['../page.styl', './home.page.styl']
 })
 export class HomePage {
-    title = "Home Page";
+    title = 'Home Page';
     constructor(
         private api: ApiService
     ){
