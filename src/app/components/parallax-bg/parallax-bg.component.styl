@@ -1,20 +1,39 @@
-$pWidth = 15rem;
-$pHeight = 2rem;
+@require "~styles/_utils"
+
+$pWidth = 15rem; // complete guesswork, make sure you test on all devices and change this if data-depth changes
+$pHeight = 3.5rem;
+
+$imgHeight = 326px;
+
 #parallax-bg {
   position: fixed;
-  bottom: -($pHeight);
-  left: -($pWidth / 2);
-  width: "calc(100% + %s)" % $pWidth;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   text-align: center;
+
+  display: flex
+  justify-content: center
+  align-items: center
 }
-.layer {
+.bottom-bg-layer {
   width: 100%;
+  height: 100%;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
 }
 .home-page__background-waves {
   min-width: 100%;
   position: relative;
   left: 100%;
   margin-left: -200%;
+  top: 100%;
+  margin-top: "calc(-%s + %s)" % ($imgHeight $pHeight*5);
+  max-width: 300%;
+
+  +on-tablet-landscape-up() {
+    margin-top: "calc(-%s + %s)" % ($imgHeight $pHeight);
+    max-width: auto;
+  }
 }
