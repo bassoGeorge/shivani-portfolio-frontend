@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-declare var Parallax: any
+// import * as Parallax from 'parallax-js/dist/parallax.js'
+// declare var Parallax: any
+const Parallax = require('parallax-js/dist/parallax.js')
 
 @Component({
     selector: 'parallax-bg',
