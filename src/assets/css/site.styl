@@ -39,9 +39,11 @@ a.basic-button
   border-radius: 4.5rem
   font-weight: bold
   padding: 1.4rem 4rem
-  font-size: 1.6rem
   cursor: pointer
   basic-transition(background)
+  font-size: 1.3rem
+  +on-tablet-up()
+    font-size: 1.6rem
 
   &:hover,
   &:active
