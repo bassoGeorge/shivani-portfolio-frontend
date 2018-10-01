@@ -1,9 +1,10 @@
-<masonry [options]="masonryOptions" [useImagesLoaded]>
+<masonry [options]="masonryOptions" [useImagesLoaded]="true">
     <masonry-brick *ngFor="let project of projects; let i = index"
          class="project-card">
         <figure class="depth-1">
             <a role="button" [routerLink]="['/work', project.id]" >
-                <img class="projects-masonry--card-thumbnail" alt="{{project.title}} thumbnail" [src]="project.thumbnail"/>
+                <!-- Ooookhaay... make sure to use img="{{value}}" instead of [img]="value"... the only the former works with imageLoaded -->
+                <img class="projects-masonry--card-thumbnail" alt="{{project.title}} thumbnail" src="{{project.thumbnail}}"/>
                 <figcaption>
                     <span>
                         {{ project.title }} {{ project.subtitle ? '- ' + project.subtitle : '' }}
