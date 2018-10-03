@@ -1,6 +1,6 @@
 <main *ngIf="projectDetails" class="project-details">
     <img class="project-details__banner" *ngIf="projectDetails.bannerImage" alt="bannerImage" [src]="projectDetails.bannerImage"/>
-    <div class="project-details__description max-out-inner-images max-desktop-width-container" [innerHTML]="projectDetails.description"></div>
+    <div class="project-details__description max-out-inner-images max-desktop-width-container markdown-styles" [innerHTML]="projectDetails.description"></div>
 
     <div class="floating-footer">
         <a class="basic-button depth-2" role="button" (click)="backToWork()">Back to All Projects</a>
