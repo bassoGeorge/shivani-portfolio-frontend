@@ -39,7 +39,7 @@ export class ProjectsContainerComponent {
                 this.projectTypes = ptypes;
 
                 var pageName = data[0];
-                var page = pageName ? (ptypes.find(ptype => this.pageNameSlug(ptype.name) == this.pageNameSlug(pageName)) || ptypes[0]): ptypes[0];
+                var page = pageName ? (ptypes.find(ptype => this.pageNameSlug(ptype.name) == this.pageNameSlug(pageName)) || ptypes[1]): ptypes[1];
 
                 this.switchToProjectsPage(page);
             })
