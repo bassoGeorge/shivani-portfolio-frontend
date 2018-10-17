@@ -5,7 +5,7 @@ import { SafeHtml } from '@angular/platform-browser';
 @Component({
     selector: 'about-page',
     templateUrl: './about.page.html',
-    styleUrls: ['../page.styl']
+    styleUrls: ['../page.styl', './about.page.styl']
 })
 export class AboutPage {
 
@@ -14,6 +14,7 @@ export class AboutPage {
     constructor(
         private api: ApiService
     ){
-        this.api.aboutMe.subscribe( aboutMe => this.aboutMe = aboutMe);
+        // TODO: no more need of this stuff
+        // this.api.aboutMe.subscribe( aboutMe => this.aboutMe = aboutMe);
     }
 }
