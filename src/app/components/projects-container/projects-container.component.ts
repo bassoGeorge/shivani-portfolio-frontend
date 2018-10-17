@@ -22,7 +22,9 @@ export class ProjectsContainerComponent {
     currentProjectType: ProjectType = null;
     currentProjects: Project[];
 
-    constructor(
+    @HostBinding('class.no-desc-links') disableLinks = false;
+
+     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private location: Location,
@@ -47,6 +49,9 @@ export class ProjectsContainerComponent {
 
     switchToProjectsPage(ptype: ProjectType) {
         this.currentProjectType = ptype;
+
+        this.disableLinks = ptype.id === 1; // TODO: HACK, remove, project itself should have the knowledge of desccription
+
         // TODO: Fetch the projects from api and set to variable
         this.api.getProjects(ptype.id).subscribe(projects => {
             this.currentProjects = projects;
