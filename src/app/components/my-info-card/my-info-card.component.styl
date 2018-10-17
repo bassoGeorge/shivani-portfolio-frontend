@@ -15,9 +15,13 @@
     width: 30rem
     float: left
 
+.my-info-card__basic
+  +on-desktop-up()
+    border-bottom: 1px solid #eee
+
 .my-info-card__advance
   display: none
-  margin-top: 5rem
+  margin-top: 1.5rem
   +on-desktop-up()
     display: block
 
@@ -38,3 +42,12 @@
 
 .my-info-card__skills-container
   text-align: center
+
+.my-info-card__para--web
+  display: none
+  +on-desktop-up()
+    display: block
+
+.my-info-card__para--mobile
+  +on-desktop-up()
+    display: none
