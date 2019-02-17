@@ -31,7 +31,7 @@ module.exports = function(env) { return webpackMerge(commonConfig, {
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV),
-                API_URL: JSON.stringify("http://localhost:7888") // TODO: get from ENV variable / ansible
+                API_URL: JSON.stringify("http://api.shivaniarvk.com") // TODO: get from ENV variable / ansible
             }
         }),
         new webpack.LoaderOptionsPlugin({
