@@ -84,7 +84,7 @@ module.exports = {
                 loaders: 'raw-loader!stylus-loader'
             },
             {
-                test: /\.(png|jpg|jpeg)$/,
+                test: /\.(png|jpg|jpeg|svg)$/,
                 loaders: [{
                     loader: 'file-loader',
                     options: { name: 'assets/images/[name].[ext]'}
